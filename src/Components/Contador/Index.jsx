@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BotaoConta from "../BotaoConta/Index";
 
 function Contador() {
   const [ponto, setPonto] = useState(0);
@@ -11,26 +12,18 @@ function Contador() {
   return (
     <div>
       <p className="texto">{ponto}</p>
-      <input
-        onClick={(evento) => handlePonto(evento.target.value)}
-        type="button"
-        value="+1"
-      />
-      <input
-        onClick={(evento) => handlePonto(evento.target.value)}
-        type="button"
-        value="+3"
-      />
-      <input
-        onClick={(evento) => handlePonto(evento.target.value)}
-        type="button"
-        value="+5"
-      />
-      <input
-        onClick={(evento) => handlePonto(evento.target.value)}
-        type="button"
-        value="+10"
-      />
+      <div>
+        <BotaoConta valor={"+1"} handlePonto={handlePonto} />
+        <BotaoConta valor={"+3"} handlePonto={handlePonto} />
+        <BotaoConta valor={"+5"} handlePonto={handlePonto} />
+        <BotaoConta valor={"+10"} handlePonto={handlePonto} />
+      </div>
+      <div>
+        <BotaoConta valor={"-1"} handlePonto={handlePonto} />
+        <BotaoConta valor={"-3"} handlePonto={handlePonto} />
+        <BotaoConta valor={"-5"} handlePonto={handlePonto} />
+        <BotaoConta valor={"-10"} handlePonto={handlePonto} />
+      </div>
     </div>
   );
 }
