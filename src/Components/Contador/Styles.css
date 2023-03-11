@@ -1,0 +1,10 @@
+.contador__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.contador__btn--container {
+  display: flex;
+  gap: 0.5em;
+}

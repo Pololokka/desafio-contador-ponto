@@ -1,0 +1,7 @@
+.reset__container {
+  display: flex;
+  gap: 5em;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5em;
+}
