@@ -1,11 +1,12 @@
-function BotaoConta({ valor, handlePonto }) {
+function BotaoConta({ valor, handlePonto, player }) {
   return (
     <div>
       <input
         className="btn__geral texto"
-        onClick={(evento) => handlePonto(evento.target.value)}
+        onClick={handlePonto}
         type="button"
         value={valor}
+        name={player}
       />
     </div>
   );

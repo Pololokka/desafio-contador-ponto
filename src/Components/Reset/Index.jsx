@@ -4,24 +4,42 @@ import Contador from "../Contador/Index";
 import { useState } from "react";
 
 function Reset() {
-  const [pontoCont1, setPontoCont1] = useState(0);
-  const [pontoCont2, setPontoCont2] = useState(0);
+  const [ponto, setPonto] = useState({
+    player1: 0,
+    player2: 0,
+  });
 
   const handleReset = () => {
-    setPontoCont1(0);
-    setPontoCont2(0);
+    setPonto({
+      player1: 0,
+      player2: 0,
+    });
+  };
+
+  const handlePonto = (evento) => {
+    let valor = parseInt(evento.target.value);
+    let jogador = evento.target.name;
+    setPonto({ ...ponto, [jogador]: ponto[jogador] + valor });
   };
 
   return (
     <div className="reset__container">
-      <Contador ponto={pontoCont1} setPonto={setPontoCont1} />
+      <Contador
+        ponto={ponto.player1}
+        handlePonto={handlePonto}
+        player="player1"
+      />
       <input
         className="btn__geral texto"
         onClick={() => handleReset()}
         type="button"
         value="Reiniciar"
       />
-      <Contador ponto={pontoCont2} setPonto={setPontoCont2} />
+      <Contador
+        ponto={ponto.player2}
+        handlePonto={handlePonto}
+        player="player2"
+      />
     </div>
   );
 }
