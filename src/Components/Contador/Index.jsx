@@ -1,11 +1,8 @@
 import "./Styles.css";
 
-import { useState } from "react";
 import BotaoConta from "../BotaoConta/Index";
 
-function Contador({ pontoReset }) {
-  const [ponto, setPonto] = useState(0);
-
+function Contador({ ponto, setPonto }) {
   const handlePonto = (evento) => {
     let pontoSomado = ponto + parseInt(evento);
     setPonto(pontoSomado);

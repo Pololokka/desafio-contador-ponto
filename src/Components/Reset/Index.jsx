@@ -4,22 +4,24 @@ import Contador from "../Contador/Index";
 import { useState } from "react";
 
 function Reset() {
-  const [pontoReset, setPontoReset] = useState(0);
+  const [pontoCont1, setPontoCont1] = useState(0);
+  const [pontoCont2, setPontoCont2] = useState(0);
 
   const handleReset = () => {
-    setPontoReset(0);
+    setPontoCont1(0);
+    setPontoCont2(0);
   };
 
   return (
     <div className="reset__container">
-      <Contador pontoReset={pontoReset} setPontoReset={setPontoReset} />
+      <Contador ponto={pontoCont1} setPonto={setPontoCont1} />
       <input
         className="btn__geral texto"
-        onClick={() => setPontoReset(0)}
+        onClick={() => handleReset()}
         type="button"
         value="Reiniciar"
       />
-      <Contador pontoReset={pontoReset} setPontoReset={setPontoReset} />
+      <Contador ponto={pontoCont2} setPonto={setPontoCont2} />
     </div>
   );
 }
